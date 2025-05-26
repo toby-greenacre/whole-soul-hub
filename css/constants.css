@@ -1,3 +1,11 @@
+:root {
+    --brown-teracotta: #aa6d5c;
+    --old-rose: #bf8780;
+    --dune-tan: #d4c2b2;
+    --baby-yellow: #f3e6cf;
+    --off-white: #f8f4ec;
+    --sage-green: #bbbfab;
+}
 * {
     margin: 0;
     padding: 0;

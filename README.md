@@ -18,6 +18,7 @@ Images in the image folder:
 
 new images can be added:
 -make sure the name of the image file is /images/events/INSERT_NAME_HERE
--needs to be .jpeg or .png
+-file needs to be .jpeg or .png
+-image must have transparent background
 -once in the repository on github click add file and then upload file
 -select the image file and commit changes
