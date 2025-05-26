@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+body {
+    flex: 1;
+    background-color: #e2ddba !important;
+}
+.title{
+    background-color: #989573;
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.title img{
+    max-height: clamp(2rem, 20vw, 11rem);
+}
+.navbar {
+    background-color: #e2ddba;
+}
+.navbar-brand {
+    color: #615f48 !important;
+    font-size: clamp(1rem, 2.1vw, 2.5rem) !important;
+}
+.navbar-nav .nav-link {
+    font-size: clamp(0.4rem, 2vw, 2.5rem) !important;
+    color: #615f48 !important;
+    transition: 0.2s ease-in-out;
+    padding-right: 1.2rem !important;
+}
+.navbar-nav .nav-link:hover{
+    color: #2f2e23 !important;
+    transform: scale(1.05);
+}
+.navbar-toggler {
+    border: none;
+}
+.divider{
+    width: 90%;
+    height: 1px;
+    background-color: #a09b7f46;
+    margin: 0rem auto;
+}
+.heading{
+    padding-top: 1rem;
+    text-align: center;
+    text-decoration: underline;
+    color: #615f48;
+}
+footer {
+    background-color: #989573;
+    color: #e2ddba;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: auto;
+}
+
+footer .socials {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-bottom: 1rem;
+}
+
+footer .socials a {
+    color: #e2ddba;
+    text-decoration: none;
+    font-size: 1.3rem;
+    transition: color 0.3s ease;
+}
+
+footer .socials a:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+footer .Namasthe {
+    font-style: italic;
+    margin-bottom: 0.8rem;
+    opacity: 0.8;
+}
