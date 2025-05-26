@@ -1,18 +1,24 @@
 {
     "events": [
-      {
-        "date": "2025-06-03",
-        "title": "Lubby Meditation",
-        "time": "7:30 PM",
-        "image": "meditation.png"
-      },
-      {
-        "date": "2025-05-29",
-        "title": "New Moon Ritual",
-        "time": "6:00 PM",
-        "image": "moon.png"
-      }
+        {
+            "date": "2025-06-03",
+            "title": "Lubby Meditation",
+            "time": "7:30 PM",
+            "image": "meditation.png"
+        },
+        {
+            "date": "2025-05-29",
+            "title": "New Moon Ritual",
+            "time": "6:00 PM",
+            "image": "moon.png"
+        },
+        {
+            "date": "2025-05-26",
+            "title": "yin yoga",
+            "time": "7:00 PM",
+            "image": "moon.png"
+        }
 
     ]
-  }
+}
   
