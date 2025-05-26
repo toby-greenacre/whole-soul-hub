@@ -41,6 +41,17 @@ body {
 .navbar-toggler {
     border: none;
 }
+@media (max-width: 900px) {
+    .title img{
+        max-height: clamp(2rem, 30vw, 50rem) !important;
+    }
+    .navbar-brand {
+        font-size: clamp(1rem, 4.2vw, 2.5rem) !important;
+    }
+    .navbar-nav .nav-link {
+        font-size: clamp(0.4rem, 4vw, 2.5rem) !important;
+    }
+}
 .divider{
     width: 90%;
     height: 1px;
