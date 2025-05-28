@@ -4,24 +4,23 @@ document.addEventListener("DOMContentLoaded", () => { //once the page is loaded
 
   const formatDate = (date) => date.toISOString().split("T")[0]; //function that formats dates so it matches json
 
-  // function to parse a time string like "7:00 pm" into a Date object (only for comparing times)
-  const parseTime = (timeStr) => {
-    const [_, hourStr, minuteStr, meridian] = timeStr
-      .trim()
-      .toLowerCase()
-      .match(/(\d{1,2}):(\d{2})\s*(am|pm)/) || [];
+  const parseTime = (timeStr) => { //function to convert the time strings into dates for comparing times
+    const [_, hourStr, minuteStr, meridian] = timeStr //create array with hour, min, and meridian (am/pm)
+      .trim() // remove spaces to correct formatting
+      .toLowerCase() //make lowercase so formatting is correct
+      .match(/(\d{1,2}):(\d{2})\s*(am|pm)/) || []; //break it down into the sections or return empy array if invalid format
 
-    if (!hourStr || !minuteStr || !meridian) return new Date(); // fallback in case format is wrong
+    if (!hourStr || !minuteStr || !meridian) return new Date(); //if format is wrong just return current time
 
-    let hour = parseInt(hourStr);
+    let hour = parseInt(hourStr); // convert hour and min into int
     const minute = parseInt(minuteStr);
 
-    if (meridian === "pm" && hour !== 12) hour += 12;
+    if (meridian === "pm" && hour !== 12) hour += 12; //use am or pm to convert to 24 hour time
     if (meridian === "am" && hour === 12) hour = 0;
 
     const time = new Date();
-    time.setHours(hour, minute, 0, 0);
-    return time;
+    time.setHours(hour, minute, 0, 0); //create a new date with the time set to the converted date
+    return time; //return that date
   };
 
   const generateCalendar = async () => { //main function
@@ -54,10 +53,9 @@ document.addEventListener("DOMContentLoaded", () => { //once the page is loaded
         dayEl.appendChild(dateHeader); //add the heading to the calander day 
 
         if (events.length > 0) { //if there are events on this day
-          // Sort events by time before displaying
-          events.sort((a, b) => parseTime(a.time) - parseTime(b.time));
+          events.sort((a, b) => parseTime(a.time) - parseTime(b.time)); //sort events by time (use the parseTime function to convert strings)
 
-          events.forEach(event => {
+          events.forEach(event => { //loop through each event on this day
             const title = document.createElement("div"); //create new div element called event-title
             title.classList.add("event-title");
             title.textContent = event.title; //get the event title
