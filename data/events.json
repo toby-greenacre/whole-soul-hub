@@ -2,7 +2,7 @@
     "events": [
         {
             "date": "2025-06-03",
-            "title": "Lubby Meditation",
+            "title": "Meditation",
             "time": "7:30 PM",
             "image": "meditation.png"
         },
@@ -13,8 +13,14 @@
             "image": "moon.png"
         },
         {
-            "date": "2025-05-26",
+            "date": "2025-06-03",
             "title": "yin yoga",
+            "time": "7:00 PM",
+            "image": "moon.png"
+        },
+        {
+            "date": "2025-06-06",
+            "title": "vinyassa yoga",
             "time": "7:00 PM",
             "image": "moon.png"
         }
