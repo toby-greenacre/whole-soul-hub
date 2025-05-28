@@ -4,6 +4,19 @@ document.addEventListener("DOMContentLoaded", () => { //once the page is loaded
 
   const formatDate = (date) => date.toISOString().split("T")[0]; //function that formats dates so it matches json
 
+  // function to convert 12-hour time string like "7:00pm" into Date object (today's date used just for sorting)
+  const parseTime = (timeStr) => {
+    const match = timeStr.trim().match(/(\d+):(\d+)\s*(am|pm)/i);
+    if (!hour || !minute || !ampm) return new Date(0); // fallback if format fails
+      let h = parseInt(hour);
+      const m = parseInt(minute);
+      if (ampm.toLowerCase() === "pm" && h !== 12) h += 12;
+      if (ampm.toLowerCase() === "am" && h === 12) h = 0;
+      const d = new Date();
+      d.setHours(h, m, 0, 0);
+      return d;
+  };
+
   const generateCalendar = async () => { //main function
       const eventData = await fetch("data/events.json") //fetch json file
           .then((res) => res.json()) //read the json
@@ -23,7 +36,9 @@ document.addEventListener("DOMContentLoaded", () => { //once the page is loaded
               currentDate.setDate(today.getDate() + index); //day that its creating is the current day + that 0-13 value
               const dateString = formatDate(currentDate); //format the date with the function
 
-              const eventsForTheDay = eventData.filter((e) => e.date === dateString); //find all events that match that date
+              const eventsForTheDay = eventData
+                  .filter((e) => e.date === dateString) //find all events that match that date
+                  .sort((a, b) => parseTime(a.time) - parseTime(b.time)); //sort them by parsed time
 
               const dayEl = document.createElement("div"); //create new div element with calander-day class
               dayEl.classList.add("calendar-day");
